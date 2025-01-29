@@ -1,22 +1,62 @@
-body{
+html {
     background-image: url(../img/bg.jpg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    color: #e9e8e8;
+    min-height: 100%;
 }
-section{
-    height: 100vh;
+
+section {
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.container{
+
+footer {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+}
+
+h2 {
+    margin: 10px auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    color: white;
+}
+
+a {
+    color: rgb(156, 226, 240);
+    transition: 0.2s ease-in-out;
+}
+
+a:hover {
+    color: rgb(71, 211, 216);
+}
+
+.container {
     background-color: rgba(231, 227, 227, 0.1);
     backdrop-filter: blur(10px);
-    width: 762px;
-    padding: 40px 117px;
-    margin: 3rem 0 6rem;
+    padding: 60px 60px;
+    margin: 0 auto;
+    max-width: 650px;
     border-radius: 20px;
-    color: white;
     border: 1px solid #ffffff42;
+    justify-content: center;
+    align-content: center;
+}
+
+.header {
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 select {
@@ -24,5 +64,84 @@ select {
     padding: 5px 8px;
     border-radius: 4px;
     min-width: 200px;
-    margin: 15px 0;
-  }
+}
+
+.city {
+    flex: 1 1 calc(25% - 30px);
+    max-width: calc(25% - 30px);
+    border-right: 2px dashed rgba(231, 227, 227, 0.1);
+    padding: 10px;
+}
+
+.city:last-child {
+border: none;
+}
+
+.city small{
+    font-size: 10px;
+    vertical-align: middle;
+    line-height: 1.7rem;    
+}
+.cities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    section{
+        height: auto;
+    }
+    .container {
+        padding: 40px 20px;
+        margin: 20px;
+    }
+
+    .header{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    select{
+        width: 100%;
+        margin: 5px;
+    }
+
+    .cities {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .city {
+        padding: 10px 10px;
+        
+        flex: 1 1 calc(40% - 10px);
+        max-width: calc(40% - 10px);
+        border-bottom: 2px dashed rgba(231, 227, 227, 0.1);
+        border-right: none;
+    }
+
+    footer{
+        margin: 20px auto;
+        max-width: 400px;
+    }
+
+    h2 {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    .city {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+
+}
