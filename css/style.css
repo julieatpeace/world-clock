@@ -1,0 +1,28 @@
+body{
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+}
+section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    background-color: rgba(231, 227, 227, 0.1);
+    backdrop-filter: blur(10px);
+    width: 762px;
+    padding: 40px 117px;
+    margin: 3rem 0 6rem;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid #ffffff42;
+}
+
+select {
+    display: block;
+    padding: 5px 8px;
+    border-radius: 4px;
+    min-width: 200px;
+    margin: 15px 0;
+  }
