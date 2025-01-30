@@ -101,6 +101,7 @@ border: none;
     .header{
         align-items: center;
         flex-direction: column;
+        gap: 10px;
     }
 
     select{
