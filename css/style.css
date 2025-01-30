@@ -41,11 +41,6 @@ a:hover {
     color: rgb(71, 211, 216);
 }
 
-strong{
-    color: rgb(156, 226, 240);
-    font-weight: 600;
-}
-
 .container {
     background-color: rgba(231, 227, 227, 0.1);
     backdrop-filter: blur(10px);
@@ -62,6 +57,7 @@ strong{
     margin: 0 0 30px 0;
     display: flex;
     justify-content: space-between;
+    gap: 50px;
 }
 
 select {
@@ -72,10 +68,9 @@ select {
 }
 
 .city {
-    flex: 1 1 calc(25% - 30px);
-    max-width: calc(25% - 30px);
     border-right: 2px dashed rgba(231, 227, 227, 0.1);
     padding: 10px;
+    min-width: 150px;
 }
 
 .city:last-child {
@@ -89,7 +84,8 @@ border: none;
 }
 .cities {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
 }
 
