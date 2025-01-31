@@ -30,7 +30,10 @@ function updateCity(event) {
     let countryTime = moment().tz(countryTimezone);
     
     let cityName = countryTimezone.replace("_"," ").split("/")[1];
-
+    if (cityName === "Guatemala") {
+        cityName = "San Salvador";
+    }
+    
     let citiesElement = document.querySelector("#cities");
     citiesElement.innerHTML = 
     `       <div class="city">
