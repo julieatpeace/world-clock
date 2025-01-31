@@ -8,13 +8,17 @@ function updateTime() {
     };
 
     Object.keys(timezones).forEach(id => {
+        
         let element = document.querySelector(`#${id}`);
+        
+        if (element){
         let dateElement = element.querySelector(".date");
         let timeElement = element.querySelector(".time");
         let time = moment().tz(timezones[id]);
 
         dateElement.innerHTML = time.format("dddd, Do MMM YYYY");
         timeElement.innerHTML = time.format("h:mm:ss [<small>]A[</small>]");
+        }
     });
 }
 updateTime();
@@ -24,19 +28,19 @@ setInterval(updateTime, 1000);
 function updateCity(event) {
     let countryTimezone = event.target.value;
     let countryTime = moment().tz(countryTimezone);
+    
+    let cityName = countryTimezone.replace("_"," ").split("/")[1];
 
     let citiesElement = document.querySelector("#cities");
     citiesElement.innerHTML = 
     `       <div class="city">
-                <h1>🇸🇻</h1>
-                <h2>${countryTimezone}</h2>
+                <h1>🌎</h1>
+                <h2>${cityName}</h2>
                 <div class="date">${countryTime.format("dddd, Do MMM YYYY")}</div>
                 <div class="time">${countryTime.format("h:mm:ss [<small>]A[</small>]")}</div>
             </div>`;  
 
 };
 
-
 let countrySelect = document.querySelector("#countries");
 countrySelect.addEventListener("change", updateCity)
-setInterval(updateCity,1000);
