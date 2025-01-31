@@ -33,7 +33,10 @@ function updateCity(event) {
     if (cityName === "Guatemala") {
         cityName = "San Salvador";
     }
-    
+    if (cityName === "Madrid") {
+        cityName = "Barcelona";
+    }
+
     let citiesElement = document.querySelector("#cities");
     citiesElement.innerHTML = 
     `       <div class="city">
