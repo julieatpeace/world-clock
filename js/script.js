@@ -28,8 +28,14 @@ setInterval(updateTime, 1000);
 function updateCity(event) {
     let countryTimezone = event.target.value;
     let countryTime = moment().tz(countryTimezone);
+
+    if (countryTimezone === "current") {
+        countryTimezone = moment.tz.guess()
+    }
     
     let cityName = countryTimezone.replace("_"," ").split("/")[1];
+    
+    
     if (cityName === "Guatemala") {
         cityName = "San Salvador";
     }
