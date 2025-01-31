@@ -43,7 +43,7 @@ function updateCity(event) {
 
     let citiesElement = document.querySelector("#cities");
     citiesElement.innerHTML = 
-    `       <div class="city">
+    `       <div class="city" style="border:none;">
                 <h1>🌎</h1>
                 <h2>${cityName}</h2>
                 <div class="date">${countryTime.format("dddd, Do MMM YYYY")}</div>
