@@ -27,14 +27,12 @@ setInterval(updateTime, 1000);
 
 function updateCity(event) {
     let countryTimezone = event.target.value;
-    let countryTime = moment().tz(countryTimezone);
-
     if (countryTimezone === "current") {
         countryTimezone = moment.tz.guess()
     }
-    
+
+    let countryTime = moment().tz(countryTimezone);
     let cityName = countryTimezone.replace("_"," ").split("/")[1];
-    
     
     if (cityName === "Guatemala") {
         cityName = "San Salvador";
@@ -50,9 +48,15 @@ function updateCity(event) {
                 <h2>${cityName}</h2>
                 <div class="date">${countryTime.format("dddd, Do MMM YYYY")}</div>
                 <div class="time">${countryTime.format("h:mm:ss [<small>]A[</small>]")}</div>
-            </div>`;  
+            </div>
+            <a href="/">All cities</a>`;
+            
 
 };
 
 let countrySelect = document.querySelector("#countries");
-countrySelect.addEventListener("change", updateCity)
+countrySelect.addEventListener("change", function(event) {
+    setInterval(function() {
+        updateCity(event);
+    }, 1000);
+});

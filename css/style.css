@@ -24,6 +24,11 @@ h1 {
     color: white;
 }
 
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+
 h2 {
     margin: 10px auto;
     font-size: 1.1rem;
